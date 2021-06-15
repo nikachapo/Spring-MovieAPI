@@ -39,8 +39,8 @@ public class MovieController {
     @PostMapping("getMovie")
     public GetMovieOutput getMovies(@RequestBody GetMoviesInput getMoviesInput) {
         GetMovieOutput out = new GetMovieOutput();
-        out.setMovie(movie)
-        return movieService.getMovies(getMoviesInput);
+        out.setMovie(movieService.getMovie(getMoviesInput.getId()));
+        return out;
     }
 }
 
